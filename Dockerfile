@@ -21,6 +21,7 @@ RUN sed -i 's/\r$//g' docker-entrypoint.sh && \
     pip install --no-cache-dir pipenv && \
     pipenv install --system --deploy --clear && \
     pip uninstall pipenv -y && \
+    pip install yt-dlp -U && \
     apk del .build-deps && \
     rm -rf /var/cache/apk/* && \
     mkdir /.cache && chmod 777 /.cache
